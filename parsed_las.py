@@ -1,7 +1,7 @@
 import subprocess, os
 
-
-#path_to_las = input(r"Absolute path to the LAS files:")
-os.system(r"C:\Users\skyco\Documents\LAStools\bin\lasview.exe \
-lasview -lof file_list.3880.txt -inside_tile 596200 3348700 100 \
-las2txt -lof file_list.3880.txt -inside_tile 596200 3348700 100 -odir")
+#importing os allows powershell commands to be used. Make sure to include the "", \, and r when 
+#breaking lines
+os.system(r"C:\Users\skyco\Documents\LAStools\bin\las2txt.exe" \
+r" -i C:\Users\skyco\Documents\LAStestfiles\16REU955480.las" \
+r" -inside_tile 596000 3349450 30 -odir C:\Users\skyco\Documents -parse xyz -sep tab")
