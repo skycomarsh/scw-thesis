@@ -5,17 +5,9 @@ import laspy
 
 #path_to_las = input(r"Absolute path to the LAS files:")
 #data=laspy.file.File(r"C:\Users\skyco\Documents\LAStestfiles\16REU955480.las", mode="r")
-datainput=input(r"Input file location with name:")
-data=laspy.file.File(datainput)
+#datainput=input(r"Input file location with name:")
+#data=laspy.file.File(datainput)
 
-data
-
-data.points
-
-data.get_x().min()
-data.get_x().max()
-data.get_y().min()
-data.get_y().max()
 
 def get_X_bounds(data):
     result = list()
@@ -37,8 +29,8 @@ def get_random_point(bounds):
     randomPoint = random.randrange(bounds[0], bounds[1])
     return randomPoint
 
-get_random_point(get_X_bounds(data))
-get_random_point(get_Y_bounds(data))
+#get_random_point(get_X_bounds(data))
+#sget_random_point(get_Y_bounds(data))
 
 #define LAStools path to be able to access the tools
 #lastools_path = "C:\\Users\\whites21\\Desktop\\LAStools"
