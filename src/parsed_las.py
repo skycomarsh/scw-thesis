@@ -24,7 +24,7 @@ for x in range(len(dir_list)):
 
     os.system(r"..\LAStools\las2txt.exe" \
     r" -i " + inputFile + \
-    r" -inside_tile {} {} 30 -odir ..\lasOutputData -parse xyzc -sep comma".format(x_coord,y_coord))
+    r" -inside_tile {} {} 30 -drop_class 9 -odir ..\lasOutputData -parse xyzc -sep comma".format(x_coord,y_coord))
 
     #print(command_test)
 
