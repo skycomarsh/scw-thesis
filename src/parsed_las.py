@@ -24,6 +24,9 @@ for file in range(len(dir_list)):
     x_start = int(round(get_x_min(lasFile)/100))
     x_end = int(round(get_x_max(lasFile)/100))
 
+
+
+
     #will determine how many files per 
     for y in range(y_start, y_end, 30):
                 
@@ -31,8 +34,9 @@ for file in range(len(dir_list)):
            
             os.system(r"C:/Users/skyco/Documents/GitHub/scw-thesis/LAStools/las2txt.exe" \
             r" -i " + inputFile + \
-            r" -inside_tile {0} {1} 30 -drop_class 9 18 -odir C:/Users/skyco/Documents/GitHub/scw-thesis/lasOutputData/{0}_{1}.txt" \
+            r" -inside_tile {0} {1} 30 -drop_class 9 18 -o C:/Users/skyco/Documents/GitHub/scw-thesis/lasOutputData/{0}_{1}.txt" \
             r" -parse xyzc -sep comma" .format(x,y))
+
 
 #FIGURE OUT HOW TO FIX
 #os.system(r"..\LAStools\las2txt.exe" \
