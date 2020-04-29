@@ -24,9 +24,6 @@ for file in range(len(dir_list)):
     x_start = int(round(get_x_min(lasFile)/100))
     x_end = int(round(get_x_max(lasFile)/100))
 
-
-
-
     #will determine how many files per 
     for y in range(y_start, y_end, 30):
                 
