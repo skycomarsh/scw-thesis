@@ -5,8 +5,6 @@ import pandas as pd
 path_to_text = input(r"Absolute path to the LAS files:")
 dir_list = os.listdir(path_to_text)
 
-
-
 #iterating over the defined list
 with open("../statsData/lasFileStatistics.csv", "w") as file:
    
@@ -15,9 +13,6 @@ with open("../statsData/lasFileStatistics.csv", "w") as file:
    
       inputFile = os.path.join(path_to_text, "{}".format(dir_list[x]))
       
-        lr = sklearn.linear_model.LinearRegression()
-        lr.fit(df.loc[:, "X-Value Mean"].values, df.loc[:, "Y-Value Mean"].values)
-
       try:
          df = pd.read_csv(inputFile, header=None)
 
