@@ -2,8 +2,8 @@ import subprocess, os
 import laspy
 from las_extent import get_X_bounds, get_Y_bounds, get_X_length, get_Y_length, get_x_min, get_x_max, get_y_min, get_y_max
 
-#user defined path to file where .las files saved
-path_to_las = input(r"Absolute path to the LAS files:")
+#USER NEEDS TO INPUT THEIR ABSOLUTE PATH
+path_to_las = input(r"Absolute path to the LAS files")
 dir_list = os.listdir(path_to_las)
 
 #iterating over the defined list
@@ -29,6 +29,7 @@ for file in range(len(dir_list)):
                 
         for x in range(x_start, x_end, 30):
            
+           #NEED TO INPUT USERS PATHS
             os.system(r"C:/Users/skyco/Documents/GitHub/scw-thesis/LAStools/las2txt.exe" \
             r" -i " + inputFile + \
             r" -inside_tile {0} {1} 30 -drop_class 9 18 -o C:/Users/skyco/Documents/GitHub/scw-thesis/lasOutputData/{0}_{1}.txt" \
