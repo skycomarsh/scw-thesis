@@ -4,6 +4,7 @@ import os
 from mpl_toolkits.mplot3d import Axes3D
 import matplotlib.pyplot as plt
 
+#USER NEEDS TO INPUT THEIR PATH
 #read a pixel text file into pandas dataframe and change the file name to the one you want to look at
 path_to_text = r"C:\Users\skyco\Documents\GitHub\scw-thesis\lasOutputData"
 dir_list = os.listdir(path_to_text)
