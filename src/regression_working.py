@@ -146,7 +146,7 @@ with open("../statsData/regressionStatistics.csv", "w") as file:
         ax.scatter(ground_points.x, ground_points.y, ground_points.z, marker='.',color='sienna')
         ax.scatter(ng_points.x, ng_points.y, ng_points.z, marker='.', color='darkolivegreen')
 
-        #fig.savefig('../pixelPointFig/{}.png'.format(dir_list[name]))
+        fig.savefig('../pixelPointFig/{}.png'.format(dir_list[name]))
         # here is a plot of the points in the pixel
         # along with the regression planes
 
@@ -166,9 +166,12 @@ with open("../statsData/regressionStatistics.csv", "w") as file:
 
         ax.plot_wireframe(xx, yy, z_ngplane, color='green')
         ax.plot_wireframe(xx, yy, z_gplane, color='brown')
-    # ax.plot_wireframe(xx, yy, z_zero, color='navy')
-    #fig.savefig('../regressionPlaneFig/{}.png'.format(dir_list[name]))
-    #plt.show()
+        
+        fig.savefig('../regressionPlaneFig/{}.png'.format(dir_list[name]))
+        plt.close('all')
+        # ax.plot_wireframe(xx, yy, z_zero, color='navy')
+    
+        #plt.show()
 
 
         #data frame creation
