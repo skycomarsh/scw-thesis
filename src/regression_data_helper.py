@@ -2,7 +2,7 @@ import os
 import pandas as pd
 
 #user defined path to file where .las files saved
-path_to_text = input(r"Absolute path to the LAS files:")
+path_to_text = r"Absolute path to the LAS files:"
 dir_list = os.listdir(path_to_text)
 
 #iterating over the defined list
