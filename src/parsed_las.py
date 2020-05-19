@@ -17,6 +17,8 @@ else:
 pixel_size = 30 # meters, must be an integer
 print(f"found {len(dir_list)} lidar files")
 
+pixel_size = 30 # meters, must be an integer
+print(f"found {len(dir_list)} lidar files")
 #iterating over the defined list
 for file in range(len(dir_list)):
 
