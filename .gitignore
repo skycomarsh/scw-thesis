@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /.vscode
 /src/.vscode
 __pycache__
@@ -5,3 +6,8 @@ __pycache__
 /.DS_Store
 /src/.ipynb_checkpoints
 /lasData
+=======
+.DS_Store
+.ipynb_checkpoints
+lasOutputData/*
+>>>>>>> c9bc5ce61bff3500194378f5b16163afbf80ad3c

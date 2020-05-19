@@ -77,4 +77,3 @@ def get_Y_length(data):
 #subprocess.Popen([r"C:\Users\whites21\Desktop\LAStools\bin\las2txt.exe"])
 
 #subprocess.Popen([r"C:\Users\whites21\Desktop\LAStools\bin\lasview.exe"])
-

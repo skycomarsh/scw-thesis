@@ -5,8 +5,8 @@ from mpl_toolkits.mplot3d import Axes3D
 import matplotlib.pyplot as plt
 
 #read a pixel text file into pandas dataframe and change the file name to the one you want to look at
-# user = "white"
-user = "medeiros"
+user = "white"
+#user = "medeiros"
 if user == "medeiros":
     path_to_text = os.path.normpath("/Users/medeiros/DATA_TEST/LidarAnalysis/OUTPUT/")
     output_file = "/Users/medeiros/DATA_TEST/LidarAnalysis/regressionStatistics.csv"
@@ -21,7 +21,6 @@ else:
 with open(output_file, "w") as file:
     
     file.write("file name, northing, easting, sigma_g, sigma_ng, ngh\n")
-
 
     for name in range(len(dir_list)):
         inputFile = os.path.join(path_to_text, "{}".format(dir_list[name]))
@@ -44,7 +43,6 @@ with open(output_file, "w") as file:
         # show all of the unique LAS classifications present in the 'c' column
         df.c.unique()
         
-
         # extract the ground points LAS class 2 into a new dataframe
         ground_points = df[df.c == 2].reset_index(drop=True)
 
@@ -57,7 +55,6 @@ with open(output_file, "w") as file:
         # compute ground point roughness (square root of variance)
         # using ordinary least squares regression plane
         # this is essentially 'by hand', I'm sure there is a python module for this
-
         A = np.array([[sum([1 for i in ground_points.z]), sum(ground_points.x), sum(ground_points.y)],
                     [sum(ground_points.x), sum(ground_points.x**2), sum(ground_points.x*ground_points.y)],
                     [sum(ground_points.y), sum(ground_points.x*ground_points.y), sum(ground_points.y**2)]])
@@ -66,9 +63,9 @@ with open(output_file, "w") as file:
 
         #need to ID what to do if the matricx doesn't have a determinant, i.e. throw out or pass
         try:
-            beta_g = np.linalg.solve(A,b)
+            beta_g = np.linalg.solve(A,b)      
         except np.linalg.LinAlgError:
-            pass
+            continue
         #print(beta_g)
 
         n = len(ground_points)
@@ -122,7 +119,9 @@ with open(output_file, "w") as file:
         y = pixel_center[1] - y0
         #print(x,y)
 
+
         ground_elev_center = beta_g[0] + beta_g[1]*x + beta_g[2]*y
+
         #print(ground_elev_center)
         ng_elev_center = beta_ng[0] + beta_ng[1]*x + beta_ng[2]*y
         #print(ng_elev_center)
@@ -155,7 +154,7 @@ with open(output_file, "w") as file:
             ax.scatter(ground_points.x, ground_points.y, ground_points.z, marker='.',color='sienna')
             ax.scatter(ng_points.x, ng_points.y, ng_points.z, marker='.', color='darkolivegreen')
 
-            fig.savefig(str(output_fig_dir + f'pts_{name}.png'))
+            fig.savefig(str(output_fig_dir + f'pixelPointFig/pts_{name}.png'))
             #here is a plot of the points in the pixel
             #along with the regression planes
 
@@ -178,11 +177,10 @@ with open(output_file, "w") as file:
             ax.plot_wireframe(xx, yy, z_zero, color='navy')
             #plt.show()
         
-            fig.savefig(str(output_fig_dir + f'planes_{name}.png'))
+            fig.savefig(str(output_fig_dir + f'regressionPlaneFig/planes_{name}.png'))
             plt.close('all')
             
         #data frame creation
         #df = pd.read_csv(inputFile, header=None)
         #writing the mean from the csv files to a new file
 print("COMPLETE")
-
