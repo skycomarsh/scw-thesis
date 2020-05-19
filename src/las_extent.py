@@ -9,28 +9,28 @@ import laspy
 
 def get_X_bounds(data):
     result = list()
-    X_min = data.get_x().min()
-    X_max = data.get_x().max()
+    X_min = data.get_x_scaled().min()
+    X_max = data.get_x_scaled().max()
     result.append(X_min)
     result.append(X_max)
     return result
 
 def get_x_min(data):
-    return data.get_x().min()
+    return data.get_x_scaled().min()
 
 def get_x_max(data):
-    return data.get_x().max()
+    return data.get_x_scaled().max()
     
 def get_y_min(data):
-    return data.get_y().min()
+    return data.get_y_scaled().min()
 
 def get_y_max(data):
-    return data.get_y().max()
+    return data.get_y_scaled().max()
 
 def get_Y_bounds(data):
     result = list()
-    Y_min = data.get_y().min()
-    Y_max = data.get_y().max()
+    Y_min = data.get_y_scaled().min()
+    Y_max = data.get_y_scaled().max()
     result.append(Y_min)
     result.append(Y_max)
     return result
@@ -42,16 +42,16 @@ def get_random_point(bounds):
 def get_X_length(data):
     """returns length of x for file"""
     result = list()
-    X_min = data.get_x().min()
-    X_max = data.get_x().max()
+    X_min = data.get_x_scaled().min()
+    X_max = data.get_x_scaled().max()
     X_length = X_max - X_min
     result.append(X_length)
     return result
 
 def get_Y_length(data):
     result = list()
-    Y_min = data.get_y().min()
-    Y_max = data.get_y().max()
+    Y_min = data.get_y_scaled().min()
+    Y_max = data.get_y_scaled().max()
     Y_length = Y_max - Y_min
     result.append(Y_length)
     return result
@@ -77,4 +77,3 @@ def get_Y_length(data):
 #subprocess.Popen([r"C:\Users\whites21\Desktop\LAStools\bin\las2txt.exe"])
 
 #subprocess.Popen([r"C:\Users\whites21\Desktop\LAStools\bin\lasview.exe"])
-
