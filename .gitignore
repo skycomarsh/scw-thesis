@@ -10,4 +10,5 @@ __pycache__
 .DS_Store
 .ipynb_checkpoints
 lasOutputData/*
+/venv
 >>>>>>> c9bc5ce61bff3500194378f5b16163afbf80ad3c
